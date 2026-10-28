@@ -5,3 +5,8 @@ next-env.d.ts
 *.tsbuildinfo
 .env*.local
 .vercel
+
+# The ebook itself is the paid product: deliver it through Lemon Squeezy, never commit or serve it
+*.pdf
+# Source cover export (the site uses public/cover-front.webp)
+capa-png.PNG

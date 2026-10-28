@@ -24,6 +24,8 @@ const sizes: Record<Size, string> = {
 };
 
 const SPRING = { stiffness: 80, damping: 15 };
+// Height as a multiple of width, from the real cover file
+const HEIGHT_RATIO = product.coverHeight / product.coverWidth;
 
 type Props = {
   /** Resting angle on the Y axis. Negative shows the pages edge, positive shows the spine. */
@@ -105,7 +107,7 @@ export default function BookCover3D({ angle = -25, size = "lg", scrollSpin = fal
 
   return (
     <div
-      className={`relative mx-auto w-[var(--w)] select-none [--t:calc(var(--w)*0.11)] ${sizes[size]}`}
+      className={`relative mx-auto w-[var(--w)] select-none [--t:calc(var(--w)*0.08)] ${sizes[size]}`}
       style={{ perspective: 1400, touchAction: "pan-y" }}
       onPointerMove={(e) => {
         if (!interactive) return;
@@ -128,13 +130,14 @@ export default function BookCover3D({ angle = -25, size = "lg", scrollSpin = fal
         className="pointer-events-none absolute -inset-[45%] rounded-full"
         style={{
           opacity: glowOpacity,
-          background: "radial-gradient(closest-side, rgba(201,162,75,0.32), rgba(201,162,75,0.08) 55%, transparent)",
+          background: "radial-gradient(closest-side, rgba(238,171,73,0.30), rgba(238,171,73,0.07) 55%, transparent)",
         }}
       />
 
       <motion.div
-        className="relative aspect-[2/3] w-full"
+        className="relative w-full"
         style={{
+          aspectRatio: `${product.coverWidth} / ${product.coverHeight}`,
           rotateX: reduce ? 4 : rotateX,
           rotateY: reduce ? angle : rotateY,
           y: reduce ? 0 : y,
@@ -152,12 +155,11 @@ export default function BookCover3D({ angle = -25, size = "lg", scrollSpin = fal
             fill
             priority={priority}
             sizes="(min-width: 1024px) 340px, (min-width: 640px) 300px, 240px"
-            unoptimized={product.coverFront.endsWith(".svg")}
             className="object-cover"
             draggable={false}
           />
           {/* Hinge crease and edge vignette for volume */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-[7%] bg-gradient-to-r from-black/55 via-white/10 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-black/35 to-transparent" />
           <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.55)]" />
           {/* Static diagonal reflection */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.07] to-transparent" />
@@ -190,7 +192,7 @@ export default function BookCover3D({ angle = -25, size = "lg", scrollSpin = fal
             className="font-serif tracking-[0.3em] text-gold [writing-mode:vertical-rl]"
             style={{ fontSize: "calc(var(--t) * 0.42)" }}
           >
-            RICHEST WOLF
+            {product.title.toUpperCase()}
           </span>
         </div>
 
@@ -216,7 +218,7 @@ export default function BookCover3D({ angle = -25, size = "lg", scrollSpin = fal
               width: "calc(var(--w) - 3px)",
               height: "var(--t)",
               marginTop: "calc(var(--t) / -2)",
-              transform: `rotateX(${r}) translateZ(calc(var(--w) * 0.75 - 3px))`,
+              transform: `rotateX(${r}) translateZ(calc(var(--w) * ${HEIGHT_RATIO / 2} - 3px))`,
               backgroundColor: "#ebe7dd",
               backgroundImage: "repeating-linear-gradient(0deg, #d6d0c4 0 1px, #f3f0e8 1px 3px)",
             }}

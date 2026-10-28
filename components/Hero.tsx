@@ -10,7 +10,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:gap-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
         <div className="text-center lg:text-left">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold sm:mb-6">The Richest Wolf Ebook</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold sm:mb-6">{hero.eyebrow}</p>
           <h1 className="font-serif text-[2.6rem] leading-[1.05] text-ink sm:text-6xl lg:text-7xl">{hero.headline}</h1>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg lg:mx-0">{hero.subheadline}</p>
 

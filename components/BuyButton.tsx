@@ -25,7 +25,7 @@ export default function BuyButton({ label = "Get the Book", showPrice = true, si
     <a
       href={checkoutUrl}
       onClick={() => window.plausible?.("Buy Click", { props: { placement } })}
-      className={`lemonsqueezy-button inline-flex items-center justify-center gap-2 rounded-md bg-gold font-semibold text-black shadow-[0_10px_40px_-10px_rgba(201,162,75,0.6)] transition hover:bg-gold-bright hover:shadow-[0_14px_50px_-10px_rgba(201,162,75,0.8)] active:scale-[0.98] ${sizing} ${className}`}
+      className={`lemonsqueezy-button inline-flex items-center justify-center gap-2 rounded-md bg-gold font-semibold text-black shadow-[0_10px_40px_-10px_rgba(233,168,74,0.6)] transition hover:bg-gold-bright hover:shadow-[0_14px_50px_-10px_rgba(233,168,74,0.8)] active:scale-[0.98] ${sizing} ${className}`}
     >
       {label}
       {showPrice && (

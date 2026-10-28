@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: { dangerouslyAllowSVG: true, contentDispositionType: "inline" },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

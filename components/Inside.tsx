@@ -13,7 +13,7 @@ export default function Inside() {
     <section id="inside" className="scroll-mt-16 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
-          <SectionTitle eyebrow="What's inside" title={`${chapters.length} chapters. One clear plan.`} />
+          <SectionTitle eyebrow="What's inside" title={`${chapters.length} chapters. From your first dollar saved to financial freedom.`} />
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -27,15 +27,23 @@ export default function Inside() {
           </dl>
         </Reveal>
 
-        <ol className="mt-14 grid gap-x-12 gap-y-2 md:grid-cols-2">
+        <ol className="mt-14 grid gap-6 md:grid-cols-2">
           {chapters.map((c, i) => (
-            <Reveal key={c.title} delay={(i % 2) * 0.06}>
-              <li className="flex gap-5 border-b border-line py-6">
-                <span className="font-serif text-2xl text-gold/70 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 className="font-serif text-xl text-ink">{c.title}</h3>
-                  <p className="mt-1 text-muted">{c.benefit}</p>
-                </div>
+            <Reveal key={c.title} delay={(i % 2) * 0.08}>
+              <li className="h-full rounded-lg border border-line p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold/80">Chapter {i + 1}</p>
+                <h3 className="mt-3 font-serif text-2xl text-ink">{c.title}</h3>
+                <p className="mt-2 text-muted">{c.benefit}</p>
+                <ul className="mt-6 space-y-2 border-t border-line pt-6 text-sm text-ink/75">
+                  {c.topics.map((t, j) => (
+                    <li key={t} className="flex gap-3">
+                      <span className="w-7 shrink-0 tabular-nums text-gold/60">
+                        {i + 1}.{j + 1}
+                      </span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
               </li>
             </Reveal>
           ))}

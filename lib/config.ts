@@ -5,23 +5,25 @@ export const site = {
   name: "Richest Wolf",
   url: "https://richestwolf.com", // TODO: final domain
   contactEmail: "hello@richestwolf.com", // TODO: real contact e-mail
-  title: "Richest Wolf — The Money Playbook They Never Taught You",
+  title: "Alpha Investor by Richest Wolf — Practical Finance Guide",
   description:
-    "A practical PDF guide to budgeting, saving and investing with a clear plan. Instant download, secure checkout, 30-day money-back guarantee.",
+    "Timeless economic principles meet the decisions of Buffett, Munger and Bogle. A practical PDF guide to saving, cutting costs and investing for the long term.",
 };
 
 export const product = {
-  title: "Richest Wolf",
-  subtitle: "The Money Playbook They Never Taught You",
+  title: "Alpha Investor",
+  subtitle: "Practical Finance Guide Featuring Old and Modern Investors",
   price: 47, // TODO: confirm final price
   currency: "USD",
   // Only set this if the product was really sold at this price before.
   anchorPrice: null as number | null,
-  pages: 120, // TODO: real page count
-  readingTime: "~3 hrs", // TODO
+  pages: 36,
+  readingTime: "~20 min",
   format: "PDF",
   refundDays: 30, // TODO: confirm 14 or 30
-  coverFront: "/cover-front.svg", // TODO: replace with the real cover export (≥1600px tall, .webp)
+  coverFront: "/cover-front.webp", // TODO: re-export at ≥1600px tall; the current file is 387×603
+  coverWidth: 387,
+  coverHeight: 603,
 };
 
 // Swap the test link for the production one here before launch.
@@ -31,53 +33,99 @@ export const checkoutUrl =
 export const priceLabel = `$${product.price}`;
 
 export const hero = {
+  eyebrow: "Alpha Investor · by Richest Wolf",
   headline: "Think like the wealthy. Build like a wolf.",
-  // TODO: "A practical guide to [RESULT] in [TIMEFRAME]."
   subheadline:
-    "A practical guide to taking control of your money, building savings and investing with a clear plan — starting this month.",
+    "A practical finance guide that pairs timeless economic principles with the decisions of history's greatest investors — so you can save with purpose, stop the leaks and invest for the long term.",
   trust: ["Instant PDF download", "Secure checkout", `${product.refundDays}-day guarantee`],
 };
 
 export const problem = [
-  "Your paycheck arrives, and a few weeks later it's gone. You're not sure where.",
-  "Debt keeps rolling over, and every month feels like starting from zero.",
-  "You know you should be investing, but nobody ever showed you a plan.",
-  "Meanwhile, people around you seem to be quietly getting ahead.",
+  "Your income goes up, but somehow there's never more left at the end of the month.",
+  "Small, unexamined expenses quietly eat everything that comes in.",
+  "Consumer debt feels convenient today and costs you years of capital later.",
+  "You know you should invest, but every source is either pure theory or tips without a foundation.",
 ];
 
-// TODO: one sentence on the book's core method.
-export const solution =
-  "Wealth isn't a secret or a lottery ticket. It's a system: spend with intent, protect what you earn, and let disciplined investing do the heavy lifting over time.";
+export const method = [
+  { step: "A real financial problem", text: "Starting from decisions households actually face." },
+  { step: "An eternal economic principle", text: "The idea behind it, from the thinkers who defined economics." },
+  { step: "A practical application", text: "Concrete actions you can take right away." },
+  { step: "A modern case study", text: "How today's builders of wealth apply the same principle." },
+];
 
-// TODO: replace with the real table of contents.
+export const thinkers = {
+  classical: ["Adam Smith", "David Ricardo", "Frédéric Bastiat", "Carl Menger", "Walter Bagehot"],
+  modern: ["Warren Buffett", "Charlie Munger", "Peter Lynch", "John Bogle", "Ray Dalio", "Jeff Bezos"],
+};
+
 export const chapters = [
-  { title: "The Wolf Mindset", benefit: "Why discipline beats income when it comes to building wealth." },
-  { title: "Know Your Numbers", benefit: "Map where every dollar goes in under an hour." },
-  { title: "The Budget You'll Actually Follow", benefit: "A simple system that survives real life." },
-  { title: "Killing Debt", benefit: "A clear order of attack, from the most expensive debt down." },
-  { title: "The Safety Net", benefit: "How big your emergency fund should be, and where to keep it." },
-  { title: "Investing 101", benefit: "Index funds, compounding and risk, explained without jargon." },
-  { title: "Building Your Portfolio", benefit: "Turn principles into a plan you can start this month." },
-  { title: "Growing Your Income", benefit: "Practical ways to widen the gap between earning and spending." },
-  { title: "Playing the Long Game", benefit: "Habits that keep you on track for decades, not weeks." },
+  {
+    title: "Foundations of Wealth",
+    benefit: "Why wealth starts with how money is treated — before any strategy or market.",
+    topics: [
+      "Saving is the first act of wealth",
+      "Value, choice and opportunity cost",
+      "Income accelerates wealth, behavior determines it",
+      "The unseen cost of bad decisions",
+      "Capital allocation and rational thinking",
+      "Temperament over intelligence",
+    ],
+  },
+  {
+    title: "Reducing Household Expenses",
+    benefit: "Stop the leaks so a surplus can exist at all.",
+    topics: [
+      "Expenses are a system, not a list",
+      "Marginal analysis and small decisions",
+      "Opportunity cost and household trade-offs",
+      "Fixed costs: the highest-leverage area",
+      "Behavioral economics and consumption traps",
+      "Discipline at scale",
+    ],
+  },
+  {
+    title: "Investing Money & Stocks",
+    benefit: "Turn surplus into productive capital — as an owner, not a speculator.",
+    topics: [
+      "What investing really is",
+      "Risk, probability and expected value",
+      "The power of compounding",
+      "Stocks as ownership, not bets",
+      "Asset allocation and personal strategy",
+      "Long-term vision",
+    ],
+  },
+  {
+    title: "Financial Independence",
+    benefit: "Make capital, not labor, pay for your life — and know exactly what that takes.",
+    topics: [
+      "What financial independence really means",
+      "The mathematics of financial independence",
+      "Savings rate: the real accelerator",
+      "Compounding and time discipline",
+      "Income streams and capital stability",
+      "Freedom over status",
+    ],
+  },
 ];
 
 export const benefits = [
-  { title: "Build a budget you'll actually follow", text: "No spreadsheets you abandon in a week. A system that fits your life." },
-  { title: "Know exactly where your money goes", text: "Clarity on every dollar, so nothing slips away unnoticed." },
-  { title: "Get out of debt with a clear order", text: "Stop juggling payments and start closing accounts for good." },
-  { title: "Start investing with a plan", text: "Understand what to buy, why, and how much risk you're taking." },
-  { title: "Build a real safety net", text: "Sleep better knowing an emergency won't set you back years." },
-  { title: "Think long-term", text: "Make decisions today that your future self will thank you for." },
+  { title: "Make saving non-negotiable", text: "Treat savings as a fixed expense and automate it before money reaches spending." },
+  { title: "Plug the leaks for good", text: "Cut fixed and recurring costs first — the reductions that compound every month." },
+  { title: "Think in opportunity cost", text: "See what each purchase really costs you in future capital before you make it." },
+  { title: "Invest like an owner", text: "Understand businesses, cash flow and moats instead of chasing price movements." },
+  { title: "Build a portfolio that endures", text: "Diversify with low-cost instruments and align allocation with your time horizon." },
+  { title: "Know your freedom number", text: "Calculate the capital you need to cover your expenses and track your way there." },
 ];
 
 // TODO: real author photo, name and story.
 export const author = {
-  name: "The Richest Wolf",
+  name: "Richest Wolf",
   photo: null as string | null,
   bio: [
-    "I wrote this book because nobody taught me how money actually works. School didn't, and most of the advice online was either too complicated or too good to be true.",
-    "These pages are the system I wish I'd had: practical, honest, and built for people who want steady progress rather than overnight miracles.",
+    "Most personal finance books are either too theoretical to use or tactical tips with no foundation. Alpha Investor was written to sit between those extremes.",
+    "It stands on centuries of economic thought — not as authority to follow blindly, but as a companion for anyone who chooses patience over impulse, reason over noise, and long-term freedom over short-term comfort.",
   ],
 };
 
@@ -88,22 +136,22 @@ export const testimonials: { quote: string; name: string }[] = [];
 export const audience = {
   forYou: [
     "You earn a decent income but never seem to keep much of it",
-    "You want to start investing but don't know where to begin",
-    "You prefer a clear plan over hype and get-rich-quick promises",
-    "You're willing to put in steady effort over months and years",
+    "You want to start investing but want to understand the why, not just the how",
+    "You'd rather learn from Smith, Buffett and Bogle than from internet gurus",
+    "You think in decades, not months",
   ],
   notForYou: [
-    "You're looking for a trading system or guaranteed returns",
+    "You're looking for trading signals or guaranteed returns",
     "You want to get rich overnight",
   ],
 };
 
-// TODO: only list bonuses that actually exist.
 export const included = [
-  `The complete Richest Wolf ebook (${product.format}, ~${product.pages} pages)`,
+  `The complete ${product.title} ebook (${product.format}, ${product.pages} pages)`,
+  `${chapters.length} chapters, from saving to financial independence`,
+  "Practical application steps in every section",
   "Read on any device: phone, tablet or computer",
   "Instant download link sent to your e-mail",
-  "Free updates to future editions",
 ];
 
 export const faq = [
@@ -113,7 +161,11 @@ export const faq = [
   },
   {
     q: "Do I need any experience?",
-    a: "Not at all. The book starts from the fundamentals and builds step by step, so it works whether you're starting from zero or want to organize what you already know.",
+    a: "No. The book starts with the foundations — saving and spending — and builds up to investing and financial independence, explaining each idea in plain language.",
+  },
+  {
+    q: "How long is the book?",
+    a: `${product.pages} pages. It's deliberately concise: you can read it in one sitting and come back to the practical steps whenever you need them.`,
   },
   {
     q: "How do I receive the book?",
@@ -121,11 +173,7 @@ export const faq = [
   },
   {
     q: "Does it work outside the US?",
-    a: "Yes. The principles — budgeting, debt, saving and long-term investing — apply anywhere. Where account types or rules differ by country, the book explains the idea so you can find the local equivalent.",
-  },
-  {
-    q: "Are there any recurring charges?",
-    a: `No. It's a one-time payment of ${priceLabel}. No subscriptions.`,
+    a: "Yes. The principles — saving, controlling costs, diversifying and compounding — apply anywhere. Some examples use US references such as the S&P 500 and US-listed companies; the reasoning carries over to your local equivalents.",
   },
   {
     q: "What if I don't like it?",
@@ -134,4 +182,4 @@ export const faq = [
 ];
 
 export const disclaimer =
-  "Richest Wolf is educational content only and does not constitute financial, investment, tax or legal advice. Results vary from person to person. Investing involves risk, including the possible loss of principal.";
+  "Alpha Investor is educational content only and does not constitute financial, investment, tax or legal advice. Results vary from person to person. Investing involves risk, including the possible loss of principal.";

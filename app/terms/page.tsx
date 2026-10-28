@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
-import { disclaimer, site } from "@/lib/config";
+import { disclaimer, product, site } from "@/lib/config";
 
 export const metadata: Metadata = { title: `Terms of Use — ${site.name}` };
 
@@ -9,11 +9,11 @@ export const metadata: Metadata = { title: `Terms of Use — ${site.name}` };
 export default function Terms() {
   return (
     <LegalPage title="Terms of Use" updated="October 27, 2026">
-      <p>By using this website or buying the {site.name} ebook, you agree to these terms.</p>
+      <p>By using this website or buying the {product.title} ebook, you agree to these terms.</p>
 
       <h2>The product</h2>
       <p>
-        {site.name} is a digital ebook delivered as a PDF file. After purchase you receive a download link by e-mail. Orders
+        {product.title} is a digital ebook by {site.name}, delivered as a PDF file. After purchase you receive a download link by e-mail. Orders
         are processed by Lemon Squeezy, our Merchant of Record, whose terms also apply to the transaction.
       </p>
 
