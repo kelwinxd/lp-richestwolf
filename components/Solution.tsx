@@ -40,14 +40,18 @@ export default function Solution() {
               aria-hidden
               className="pointer-events-none absolute inset-[10%] rounded-full bg-[radial-gradient(closest-side,rgba(233,168,74,0.18),transparent)]"
             />
-            <Image
-              src="/buffett-munger.webp"
-              alt="Gold line-art illustration of Warren Buffett and Charlie Munger in front of a rising mountain"
-              width={1024}
-              height={1073}
-              sizes="(min-width: 1024px) 448px, 90vw"
-              className="relative h-auto w-full"
-            />
+            <div className="relative">
+              <Image
+                src="/buffett-munger.webp"
+                alt="Gold line-art illustration of Warren Buffett and Charlie Munger in front of a rising mountain"
+                width={1024}
+                height={1073}
+                sizes="(min-width: 1024px) 448px, 90vw"
+                className="h-auto w-full"
+              />
+              {/* Light glinting across the gold lines only, masked by the illustration itself */}
+              <div aria-hidden className="gold-sheen" style={{ "--sheen-mask": "url(/buffett-munger.webp)" } as React.CSSProperties} />
+            </div>
             <figcaption className="mt-3 text-center text-xs text-muted/60">
               Illustration of Warren Buffett and Charlie Munger. Not affiliated with or endorsed by them or Berkshire
               Hathaway.
