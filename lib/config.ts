@@ -13,7 +13,7 @@ export const site = {
 export const product = {
   title: "Alpha Investor",
   subtitle: "Practical Finance Guide Featuring Old and Modern Investors",
-  price: 47, // TODO: confirm final price
+  price: 12,
   currency: "USD",
   // Only set this if the product was really sold at this price before.
   anchorPrice: null as number | null,
