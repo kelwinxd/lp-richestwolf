@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
+import LemonScript from "@/components/LemonScript";
 import { site } from "@/lib/config";
 import "./globals.css";
 
@@ -34,8 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
         {children}
-        {/* Lemon Squeezy checkout overlay */}
-        <Script src="https://assets.lemonsqueezy.com/lemon.js" strategy="lazyOnload" />
+        <LemonScript />
         {/* TODO: analytics (Plausible or Vercel Analytics). BuyButton already fires a "Buy Click" event for Plausible. */}
       </body>
     </html>

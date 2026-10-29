@@ -3,7 +3,7 @@
 
 export const site = {
   name: "Richest Wolf",
-  url: "https://richestwolf.com", // TODO: final domain
+  url: "https://richestwolf.vercel.app", // TODO: switch to the custom domain once it exists
   contactEmail: "hello@richestwolf.com", // TODO: real contact e-mail
   title: "Alpha Investor by Richest Wolf — Practical Finance Guide",
   description:
