@@ -26,9 +26,9 @@ export const product = {
   coverHeight: 603,
 };
 
-// Swap the test link for the production one here before launch.
+// TEST MODE link. Swap for the live-mode link ("Copy to Live Mode" in Lemon Squeezy) once the store is activated.
 export const checkoutUrl =
-  "https://YOUR-STORE.lemonsqueezy.com/checkout/buy/PRODUCT-ID?embed=1"; // TODO
+  "https://richestwolf.lemonsqueezy.com/checkout/buy/774d9cae-b2b6-4022-b0e9-ba10b9aac776?embed=1";
 
 export const priceLabel = `$${product.price}`;
 
